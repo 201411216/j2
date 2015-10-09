@@ -1,0 +1,71 @@
+@startuml
+
+Abstract Class Beverage{
+	-description="Unknown beverage":String
+	+getDescription():String
+	+abstract cost():double
+}
+
+Class DarkRoast{
+	+DarkRoast()
+	+cost():double
+}
+
+Beverage <|-- DarkRoast
+
+Class Espresso{
+	+Espresso()
+	+cost():double
+}
+
+Beverage <|-- Espresso
+
+Class HouseBlend{
+	+HouseBlend()
+	+cost():double
+}
+
+Beverage <|-- HouseBlend
+
+Abstract Class CondimentDecorator{
+	+abstact getDescription():String
+}
+
+Beverage <-- CondimentDecorator
+Beverage --* CondimentDecorator
+
+Class Soy{
+	+Soy(Beverage)
+	+getDescription():String
+	+cost():double
+}
+
+CondimentDecorator <|-- Soy
+
+Class Whip{
+	+Whip(Beverage)
+	+getDescription():String
+	+cost():double
+}
+
+CondimentDecorator <|-- Whip
+
+Class Mocha{
+	+Mocha(Beverage)
+	+getDescription():String
+	+cost():double
+}
+
+CondimentDecorator <|-- Mocha
+
+Class Milk{
+	+Milk(Beverage)
+	+getDescription():String
+	+cost():double
+}
+
+CondimentDecorator <|-- Milk
+CondimentDecorator <|-- Mocha
+
+
+@enduml

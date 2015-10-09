@@ -1,0 +1,117 @@
+@startuml
+
+Class Object
+
+
+Class File
+Object <|-- File
+
+Class FileDescriptor
+Object <|-- FileDescriptor
+
+Class InputStream
+Object <|-- InputStream
+
+Class FileInputStream
+Class PipedInputStream
+Class FilterInputStream
+Class LineNumberInputStream
+Class BufferedInputStream
+Class DataInputStream
+Class PushbackInputStream
+Class ByteArrayInputStream
+Class SequenceInputStream
+Class StringBufferInputStream
+Class ObjectInputStream
+InputStream <|-- FileInputStream
+InputStream <|-- PipedInputStream
+InputStream <|-- FilterInputStream
+InputStream <|-- ByteArrayInputStream
+FilterInputStream <|-- LineNumberInputStream
+FilterInputStream <|-- BufferedInputStream
+FilterInputStream <|-- DataInputStream
+FilterInputStream <|-- PushbackInputStream
+InputStream <|-- ByteArrayInputStream
+InputStream <|-- SequenceInputStream
+InputStream <|-- StringBufferInputStream
+InputStream <|-- ObjectInputStream
+
+
+Class OutputStream
+Object <|-- OutputStream
+
+Class FileOutputStream
+Class PipedOutputStream
+Class FilterOutputStream
+Class BufferedOutputStream
+Class DataOutputStream
+Class PrintStream
+Class ByteArrayOutputStream
+Class ObjectOutputStream
+OutputStream <|-- FileOutputStream
+OutputStream <|-- PipedOutputStream
+OutputStream <|-- FilterOutputStream
+FilterOutputStream <|-- BufferedOutputStream
+FilterOutputStream <|-- DataOutputStream
+FilterOutputStream <|-- PrintStream
+OutputStream <|-- ByteArrayOutputStream
+OutputStream <|-- ObjectOutputStream
+
+Class RandomAccessFile
+Object <|-- RandomAccessFile
+
+Class Reader
+Object <|-- Reader
+
+Class BufferedReader
+Class LineNumberReader
+Class CharArrayReader
+Class InputStreamReader
+Class FileReader
+Class FilterReader
+Class PushbackReader
+Class PipedReader
+Class StringReader
+Reader <|-- BufferedReader
+BufferedReader <|-- LineNumberReader
+Reader <|-- CharArrayReader
+Reader <|-- InputStreamReader
+InputStreamReader <|-- FileReader
+Reader <|-- FilterReader
+FilterReader <|-- PushbackReader
+Reader <|-- PipedReader
+Reader <|-- StringReader
+
+Class StreamTokenizer
+Object <|-- StreamTokenizer
+
+Class Writer
+Object <|-- Writer
+
+Class BufferedWriter
+Class CharArrayWriter
+Class OutputStreamWriter
+Class FileWriter
+Class FilterWriter
+Class PipedWriter
+Class StringWriter
+Class PrintWriter
+Writer <|-- BufferedWriter
+Writer <|-- CharArrayWriter
+Writer <|-- OutputStreamWriter
+OutputStreamWriter <|-- FileWriter
+Writer <|-- FilterWriter
+Writer <|-- PipedWriter
+Writer <|-- StringWriter
+Writer <|-- PrintWriter
+
+Class ObjectStreamClass
+Object <|-- ObjectStreamClass
+
+Class FileFilter
+Object <|-- FileFilter
+
+Class SerializablePermission
+Object <|-- SerializablePermission
+
+@enduml
