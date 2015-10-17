@@ -1,0 +1,65 @@
+%%plantuml
+@startuml
+interface Cheese {
+    +toString():String
+}
+interface Dough {
+    +String toString();
+}
+abstract class Pizza {
+    String name; 
+    Dough dough;
+    Cheese cheese;
+
+    abstract void prepare();
+    void bake()
+    void cut()
+    void box()
+    void setName(String name)
+    String getName()
+    +String toString()
+}
+
+class CheesePizza {
+    PizzaIngredientFactory ingredientFactory
+    +CheesePizza(PizzaIngredientFactory)
+    void prepare()
+}
+interface PizzaIngredientFactory {
+    +Dough createDough()
+    +Cheese createCheese()
+}
+
+abstract class PizzaStore {
+    #abstract Pizza createPizza(String item);
+    +Pizza orderPizza(String type)
+}   
+class ChicagoPizzaStore {
+    #Pizza createPizza(String)
+}
+class NYPizzaStore {
+    #Pizza createPizza(String item)
+}
+
+Pizza <|-- CheesePizza
+PizzaIngredientFactory <|.. "ChicagoPizza\nIngredientFactory"
+PizzaIngredientFactory <|.. "NYPizza\nIngredientFactory"
+"NYPizza\nIngredientFactory" ..> Dough
+"NYPizza\nIngredientFactory" ..> Cheese
+"ChicagoPizza\nIngredientFactory" ..> Dough
+"ChicagoPizza\nIngredientFactory" ..> Cheese
+PizzaIngredientFactory --> Dough
+PizzaIngredientFactory --> Cheese
+PizzaStore <|-- ChicagoPizzaStore
+PizzaStore <|-- NYPizzaStore
+NYPizzaStore ..> PizzaIngredientFactory
+ChicagoPizzaStore ..> PizzaIngredientFactory
+PizzaStore -right-> Pizza
+Pizza --> Dough
+Pizza --> Cheese
+Cheese <|.. MozzarellaCheese
+Cheese <|.. ReggianoCheese
+Dough <|.. ThickCrustDough
+Dough <|.. ThinCrustDough
+@enduml
+
