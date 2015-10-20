@@ -1,0 +1,9 @@
+package com.j2.practice.factory;
+
+public interface ComponentFactory{
+  public void createQuadCPU();
+  public void createDualCPU();
+  public void createGRP();
+  public void createRAM();
+  public void createHDD();
+}

@@ -1,0 +1,6 @@
+package com.j2.practice.factory;
+
+public class ComputerMarket{
+  public static void main(){
+    ComputerStore sm = new SMComputerStore();
+    ComputerStore km = new SMComputerStore();

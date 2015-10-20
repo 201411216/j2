@@ -1,0 +1,55 @@
+@startuml
+
+abstract class Computer{
+	#String name
+	#CPU cpu
+	#GraphicCard graphicCard
+	#RAM ram
+	#HDD hdd
+	+abstract void assemble()
+	+void setName(String name)
+	+String toString
+}
+
+abstract class ComputerStore{
+	#abstract Computer assembleComputer(String cpu)
+	+Computer orderComputer(String type)
+}
+
+class SMComputerStore{
+	+Computer assembleComputer()
+}
+
+interface ComputerFactory{
+	+String createQuadCPU()
+	+String createDualCPU()
+	+String createGrpCard()
+	+String createRAM()
+	+String createHDD()
+}
+
+class SMComputerFactory{
+	+...
+}
+
+interface Component{
+	+String toString();
+}
+
+abstract class CPU{
+	#int core
+}
+
+
+
+
+ComputerStore -up-> Computer
+SMComputerStore -up-|> ComputerStore
+ComputerFactory <.down. SMComputerStore
+SMComputerFactory .up.|> ComputerFactory
+SMComputerFactory .down.> Component
+Component <|-down- CPU
+
+
+
+@enduml

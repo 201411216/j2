@@ -1,0 +1,8 @@
+package com.j2.practice.factory;
+
+public abstract class ComputerStore{
+  public Computer orderComputer(String type){
+    assembleComputer(type);
+  }
+  protected abstract Computer assembleComputer(String type);
+}

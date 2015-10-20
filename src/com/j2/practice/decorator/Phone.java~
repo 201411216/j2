@@ -1,0 +1,9 @@
+package com.j2.practice.decorator;
+
+public abstract class Phone{
+  private String description = "Unknown Phone";
+  public String getDescription(){
+    return description;
+  }
+  public abstract double cost();
+}

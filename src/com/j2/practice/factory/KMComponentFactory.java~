@@ -1,0 +1,19 @@
+package com.j2.practice.factory;
+
+public class KMComponentFactory implements ComponentFactory{
+  CPU createQuadCPU(){
+    return new KMQuadCPU();
+  }
+  CPU createDualCPU(){
+    return new KMDualCPU();
+  }
+  GraphicCard createGPR(){
+    return new KMGraphicCard();
+  }
+  RAM createRAM(){
+    return new KMRAM();
+  }
+  HDD createHDD(){
+    return new KMHDD();
+  }
+}

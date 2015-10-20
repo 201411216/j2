@@ -1,0 +1,11 @@
+package com.j2.practice.decorator;
+
+public class PinkHardCase extends Case{
+  public PinkCase(Phone p){
+    this.phone = p;
+    color = "pink";
+    hardness = 5.5;
+    description.append( " + pink hard case" );
+  }
+  public double cost(){
+    return p.

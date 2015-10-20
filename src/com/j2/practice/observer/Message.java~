@@ -1,0 +1,17 @@
+package com.j2.practice.observer;
+
+import java.util.ArrayList;
+
+public class Message implements Subject{
+  private ArrayList observers;
+  private String who;
+  private When when;
+  private String message;
+  
+  public Message(){
+    observers = new ArrayList();
+  }
+  
+  public void registerObserver(Observer o){
+    observers.add(o);
+  }

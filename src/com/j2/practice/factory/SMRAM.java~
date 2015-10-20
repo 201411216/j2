@@ -1,0 +1,10 @@
+package com.j2.practice.factory;
+
+public class SMRAM extends RAM{
+  public SMRAM(){
+    volume = 8;
+  }
+  public String toString(){
+    return "SM DRAM DDR4 " + volume + "G";
+  }
+}

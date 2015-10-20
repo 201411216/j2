@@ -1,0 +1,9 @@
+package com.j2.practice.factory;
+
+public class SMQuadCPU extends CPU{
+  public SMQuadCPU(){
+    core = 4;
+  }
+  public String toString(){
+    return "SM x4 CPU 2.1GHz";
+  }

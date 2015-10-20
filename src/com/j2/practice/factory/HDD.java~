@@ -1,0 +1,6 @@
+package com.j2.practice.factory;
+
+public abstract class HDD implements Component{
+  private int storage;
+  public int getStorage();
+}

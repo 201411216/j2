@@ -1,0 +1,4 @@
+package com.j2.practice.factory;
+
+public class SMComponentFactory implements ComponentFactory{
+  

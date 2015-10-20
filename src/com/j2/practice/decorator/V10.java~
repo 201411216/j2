@@ -1,0 +1,10 @@
+package com.j2.practice.decorator;
+
+public class V10{
+  public V10(){
+    desription = "LG V10";
+  }
+  public double cost(){
+    return 68.99;
+  }
+}

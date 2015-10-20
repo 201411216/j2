@@ -1,0 +1,15 @@
+package com.j2.practice.decorator;
+
+public class RedSoftCase extends Case{
+  public RedSoftCase(Phone p){
+    this.phone = p;
+    color = "red";
+    hardness = 2.3;
+  }
+  public String getDescription(){
+    return p.getDescription() + " + red case(" + hardness + ")";
+  }
+  public double cost(){
+    return p.cost() + 2.99;
+  }
+}
