@@ -1,0 +1,8 @@
+class Singleton{
+	-static instance:Sigleton
+	-Singleton
+	+static getInstance():Singleton
+	+fill()
+	+boil()
+	+drain()
+}
