@@ -1,0 +1,30 @@
+@startuml
+
+interface Command{
+	+execute():void
+	+undo():void
+}
+
+class LightOnCommand{
+	-light:Light
+	+LightOnCommand(Light);
+	
+}
+class LightOffCommand
+class NoCommand
+
+Command <|.. LightOnCommand
+Command <|.. LightOffCommand
+Command <|.. NoCommand
+
+class RemoteControlWithUndo{
+	onCommands:Command[]
+	offCommand:Command[]
+	undoCommand:Command
+	+RemoteControlWithUndo()
+	+setCommand(int, Command, Command):void
+	+onButtonWasPressed(int):void
+	+offButtonWasPressed(int):void
+}
+
+@enduml
