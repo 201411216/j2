@@ -1,0 +1,29 @@
+package com.j2.command.undo;
+
+import java.util.*;
+
+public class RemoteControlWithUndo{
+  Command[] playCommands;
+  Command[] pauseCommands;
+  Command[] stopCommands;
+  Command undoCommand;
+  
+  public RemoteControlWithUndo(){
+    playCommands = new Command[2];
+    pauseCommands = new Command[2];
+    stopCommands = new Command[2];
+    
+    Command noCommand = new NoCommand();
+    for(int i = 0; i < 2; i++){
+      playCommands[i] = noCommand;
+      pauseCommands[i] = noCommand;
+      stopCommands[i] = noCommand;
+    }
+    undoCommand = noCommand;
+  }
+  public void setCommand(int slot, Command playCommand, Command pauseCommand, Command stopCommand){
+    if(slot >= 0 && slot < 2){
+      playCommands[slot] = playCommand;
+      pauseCommands[slot] = pauseCommand;
+      stopCommands[slot] = stopCommand;
+      

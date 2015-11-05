@@ -3,3 +3,4 @@ lib/
 model/*.png
 src/*.class
 src/*~
+src/*.java~

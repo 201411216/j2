@@ -1,0 +1,6 @@
+package com.j2.command.dvd;
+
+public Interface Command{
+  public void excute();
+  public void undo();
+}

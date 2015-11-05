@@ -1,0 +1,8 @@
+package com.j2.command.dvd;
+
+public class RemoteMain{
+  public static void main(String[] args){
+    DvdBox dvdbox = new DvdBox("Living room DVD Player");
+    dvdbox.insertDvd(0, "Love Actually");
+    dvdbox.insertDvd(1, "Monster");
+    dvdbox.insertDvd(2, "D-War");

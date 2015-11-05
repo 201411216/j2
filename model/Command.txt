@@ -27,4 +27,11 @@ class RemoteControlWithUndo{
 	+offButtonWasPressed(int):void
 }
 
+class Client
+
+LightOnCommand --> Light
+LightOffCommand --> Light
+RemoteControlWithUndo --> Command
+
+
 @enduml
