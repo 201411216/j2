@@ -1,4 +1,4 @@
-package com.j2.command.dvd;
+package com.j2.command.dvdmacro;
 
 public class DvdBox{
   protected String location;

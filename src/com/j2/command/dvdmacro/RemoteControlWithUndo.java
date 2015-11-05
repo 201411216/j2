@@ -1,4 +1,4 @@
-package com.j2.command.dvd;
+package com.j2.command.dvdmacro;
 
 import java.util.*;
 
@@ -64,6 +64,9 @@ public class RemoteControlWithUndo{
     if(slot >= 0 && slot < 2){
       statCommands[slot].execute();
     }
+  }
+  public void undoButtonWasPushed(){
+    undoCommand.undo();
   }
   public String toString() {
     StringBuffer stringBuff = new StringBuffer();

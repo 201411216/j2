@@ -1,4 +1,4 @@
-package com.j2.command.dvd;
+package com.j2.command.dvdmacro;
 
 public class RemoteMain{
   public static void main(String[] args){
@@ -27,18 +27,40 @@ public class RemoteMain{
     remoteControl.setCommand(0, livingRoomDvdPlay, livingRoomDvdPause, livingRoomDvdStop, livingRoomDvdNext, livingRoomDvdStat);
     remoteControl.setCommand(1, bedRoomDvdPlay, bedRoomDvdPause, bedRoomDvdStop, bedRoomDvdNext, bedRoomDvdStat);
     
+    RemoteControlWithUndo remoteMacroControl = new RemoteControlWithUndo();
+    Command[] plays = {livingRoomDvdPlay, bedRoomDvdPlay};
+    Command[] pauses = {livingRoomDvdPause, bedRoomDvdPause};
+    Command[] stops = {livingRoomDvdStop, bedRoomDvdStop};
+    Command[] nexts = {livingRoomDvdNext, bedRoomDvdNext};
+    Command[] stats = {livingRoomDvdStat, bedRoomDvdStat};
+    MacroCommand playMacro = new MacroCommand(plays);
+    MacroCommand pauseMacro = new MacroCommand(pauses);
+    MacroCommand stopMacro = new MacroCommand(stops);
+    MacroCommand nextMacro = new MacroCommand(nexts);
+    MacroCommand statMacro = new MacroCommand(stats);
+    remoteMacroControl.setCommand(0, playMacro, pauseMacro, stopMacro, nextMacro, statMacro);
+    
     System.out.println(remoteControl);
     remoteControl.playButtonWasPushed(0);
     remoteControl.playButtonWasPushed(1);
     remoteControl.pauseButtonWasPushed(1);
+    remoteControl.undoButtonWasPushed();
     remoteControl.statButtonWasPushed(0);
-    System.out.println("\n");
     remoteControl.nextButtonWasPushed(1);
     remoteControl.nextButtonWasPushed(1);
     remoteControl.nextButtonWasPushed(0);
     remoteControl.stopButtonWasPushed(0);
     remoteControl.statButtonWasPushed(0);
-    System.out.println(remoteControl);
+    
+    System.out.println("\n---------Macro---------");
+    System.out.println(remoteMacroControl);
+    remoteMacroControl.playButtonWasPushed(0);
+    remoteMacroControl.stopButtonWasPushed(0);
+    remoteMacroControl.pauseButtonWasPushed(0);
+    remoteMacroControl.undoButtonWasPushed();
+    remoteMacroControl.nextButtonWasPushed(0);
+    remoteMacroControl.undoButtonWasPushed();
+    remoteMacroControl.undoButtonWasPushed();
   }
 }
     
