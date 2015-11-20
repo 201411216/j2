@@ -1,0 +1,8 @@
+package com.j2.templatemethod.duckcomparator;
+import java.util.*;
+
+public class DuckComparator implements Comparator<Duck>{
+  
+
+
+}
