@@ -1,0 +1,31 @@
+@startuml
+
+class Client
+
+interface Duck{
+	+quack()
+	+fly()
+}
+interface Turkey{
+	+gobble()
+	+fly()
+}
+
+class DuckAdapter{
+	d:Duck
+}
+class TurkeyAdapter{
+	t:Turkey
+}
+
+Duck <|-- TurkeyAdapter
+Turkey <|-- DuckAdapter
+TurkeyAdapter --> Turkey
+DuckAdapter --> Duck
+Client -> Duck
+Client -> Turkey
+
+
+
+
+@enduml

@@ -1,0 +1,14 @@
+package j2.com.adapter.ducks;
+
+public class TurkeyAdapter implements Duck{
+  protected Turkey turkey;
+  public TurkeyAdapter(Turkey turkey){
+    this.turkey = turkey;
+  }
+  public void quack(){
+    this.turkey.gobble();
+  }
+  public void fly(){
+    this.turkey.fly();
+  }
+}

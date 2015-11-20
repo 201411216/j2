@@ -1,0 +1,12 @@
+package com.j2.facade.smarthome;
+
+public class AirConditioner{
+  private String description;
+  private bool status;
+  
+  public AirConditioner(String description){
+    this.description = description;
+    objectTemp = ;
+  }
+  
+  public void on(){

@@ -1,0 +1,20 @@
+package com.j2.adapter.iteratorenumeration;
+
+import java.util.*;
+
+public class TestDrive {
+ public static void main (String args[]) {
+  Vector v = new Vector(3);
+  v.add(138);
+  v.add(342);
+  v.add(539);
+  Enumeration enumeration = v.elements();
+   while (enumeration.hasMoreElements()) {
+    System.out.println(enumeration.nextElement());
+  }
+  Iterator iterator = v.iterator();
+  while (iterator.hasNext()) {
+   System.out.println(iterator.next());
+  }
+ }
+}

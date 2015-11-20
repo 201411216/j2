@@ -1,0 +1,11 @@
+@startuml
+
+interface java.lang.Comparable{
+	+compareTo(T):int;
+}
+
+class Duck
+
+java.lang.Comaparable <|.. Duck
+
+@enduml
