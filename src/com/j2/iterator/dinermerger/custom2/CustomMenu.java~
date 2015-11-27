@@ -1,0 +1,39 @@
+package com.j2.iterator.dinermerger.custom;
+  
+public class CustomMenu implements Menu {
+    static final int MAX_ITEMS = 6;
+    int numberOfItems = 0;
+    MenuItem[] menuItems;
+  
+    public CustomMenu() {
+        menuItems = new MenuItem[MAX_ITEMS];
+ 
+        addItem("참치마요 삼각김밥",
+                "참치와 마요네즈가 들어간 삼각김밥", false, 1.99);
+        addItem("데리와퍼 치킨",
+                "치킨, 마요네즈, 데리야끼 소스와 밥을 섞음", false, 3.99);
+        addItem("돌솥 치즈 제육덮밥",
+                "돌솥에 제육덮밥을 하고 그위에 치즈와 상추를 뿌림", false, 4.49);
+        addItem("미트볼 스파게티",
+                "스파게티에 미트볼과 토마토로 소스를 만들어 얹음", false, 5.05);
+        addItem("티라미수",
+                "디저트 케잌", true, 3.99);
+        addItem("아메리카노",
+                "커피", true, 1.99);
+ }
+    public void addItem(String n, String d, boolean v, double p) {
+        MenuItem menuItem = new MenuItem(n, d, v, p);
+        if (numberOfItems >= MAX_ITEMS) {
+            System.err.println("")
+        } else {
+            menuItems[numberOfItems] = menuItem;
+            numberOfItems = numberOfItems + 1;
+        }
+    }
+    public MenuItem[] getMenuItems() {
+        return menuItems;
+    }
+    public Iterator createIterator() {
+        return new CustomMenuIterator(menuItems);
+    }
+}

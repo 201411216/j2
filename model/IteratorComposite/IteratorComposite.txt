@@ -1,0 +1,10 @@
+@startuml
+title before1
+class ArrayList
+class Array
+Client -down-> PancakeHouseMenu:getMenuItems()
+Client -right-> DinerMenu:getMenuItems()
+DinerMenu -> Array:length
+PancakeHouseMenu -> ArrayList:size()
+PancakeHouseMenu -> ArrayList:get()
+@enduml

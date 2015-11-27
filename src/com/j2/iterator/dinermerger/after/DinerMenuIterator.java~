@@ -1,0 +1,17 @@
+  package com.j2.iterator.dinermerger.after;
+  
+  public class DinerMenuIterator implements Iterator{
+    MenuItem[] items;
+    int position = 0;
+    public boolean hasNext(){
+      if(position>=items.lengthh || items[position] == null){
+        return false;
+      }
+      else{
+        return true;
+      }
+    }
+    public Object next(){
+    }
+  }
+  

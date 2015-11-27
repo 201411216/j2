@@ -1,0 +1,21 @@
+@startuml
+package com.j2.iterator.diner.iterator {
+	interface Iterator{
+		+hasNext():boolean
+		+next():Object
+	}
+	Iterator <|.. DinerMenuIterator
+	Iterator <|.. PancakeMenuIterator
+}
+
+package com.j2.iterator.diner.menu{
+	interface Menu{
+		+createIterator():Iterator
+	}
+	Menu <|.. DinerMenu
+	Menu <|.. PancakeHouseMenu
+}
+Menu ..> Iterator
+DinerMenu ..> DinerMenuIterator
+PancakeHouseMenu ..> PancakeMenuIterator
+@enduml
