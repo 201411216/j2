@@ -1,0 +1,6 @@
+package com.j2.state.videoplayer;
+
+public class DisplayOffState implements State{
+  
+  
+}

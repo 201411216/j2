@@ -1,0 +1,19 @@
+package com.j2.state.videoplayer;
+
+public class VideoPlayerTestDrive { 
+  public static void main(String[] args) { 
+   VideoPlayer videoPlayer= new VideoPlayer(); 
+
+   videoPlayer1.play(); 
+   videoPlayer1.playStop(); 
+   videoPlayer1.displaySleepOn(); 
+   videoPlayer1.displaySleepOff(); 
+   videoPlayer3.display(); 
+   videoPlayer3.playStop(); 
+   videoPlayer3.displaySleepOn(); 
+   videoPlayer3.displaySleepOff(); 
+ 
+ 
+ 
+  } 
+ } 

@@ -1,0 +1,23 @@
+@startuml
+
+client -> GM:new(5)
+client -> GM:insertQuater()
+
+alt HAS_QUARTER
+GM -> GM: you can not insert another quarter
+else NO_QUARTER
+GM -> GM: you inserted a quarter
+else SOLD_OUT
+GM -> GM: you can not insert a quarter, Sold out!
+else SOLDING
+GM -> GM: wait!
+end
+client -> GM:injectQuarter()
+...
+client -> GM:turnCrank()
+...
+client -> GM:dispense()
+...
+
+
+@enduml
